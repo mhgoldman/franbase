@@ -1,0 +1,5 @@
+<h2><%= @doc.name %></h2>
+<p>Tags: <%= @doc.tags.join(Doc::TAG_SEPARATOR) %></p>
+<p><%= @doc.content %></p>
+<%= link_to 'Edit', edit_doc_path(@doc) %><br/>
+<%= link_to 'All Docs', docs_path %>

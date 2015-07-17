@@ -1,0 +1,7 @@
+<h2>Docs</h2>
+<ul>
+  <% Doc.each do |doc| %>
+    <li><%= link_to doc.name, doc %></li>
+  <% end %>
+</ul>
+<%= link_to 'New doc', new_doc_path %>
