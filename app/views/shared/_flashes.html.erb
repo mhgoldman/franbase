@@ -1,0 +1,3 @@
+<% flash.each do |name,text| %>
+  <div class="alert <%= bootstrap_class_for(name) %>"><%= text %></div>
+<% end %>
