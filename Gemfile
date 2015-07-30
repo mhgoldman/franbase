@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.5'
 
+gem 'ckeditor'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -58,3 +60,11 @@ group :test do
   gem "mongoid-rspec"
   gem "email_spec"
 end
+
+gem 'truncate_html'
+
+gem 'kaminari'
+
+gem 'bootstrap-tagsinput-rails'
+gem 'twitter-typeahead-rails'
+gem 'jquery-turbolinks'

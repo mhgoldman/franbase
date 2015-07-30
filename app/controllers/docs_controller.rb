@@ -1,15 +1,9 @@
 class DocsController < ApplicationController
   def index
-    if params[:q].present?
-      @docs = Doc.search(params[:q])
-      @page_title = "Search Results for '#{params[:q]}'"
-    elsif params[:tag]
-      @docs = Doc.where(tags: params[:tag])
-      @page_title = "Docs Tagged '#{params[:tag]}'"
-    else
-      @docs = Doc.all
-      @page_title = "All Docs"
-    end
+    doc_finder = DocFinder.find(params)
+
+    @title = doc_finder.title
+    @docs = doc_finder.results.page(params[:page])
   end
 
   def show

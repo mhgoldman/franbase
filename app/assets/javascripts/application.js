@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap-tagsinput
+//= require twitter/typeahead
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require ckeditor/init
+
 //= require_tree .

@@ -11,9 +11,10 @@
 
 <%= render 'shared/nav' %>
 
-<%= render 'shared/flashes' %>
-
-<%= yield %>
+<div id="page_content">
+  <%= render 'shared/flashes' %>
+  <%= yield %>
+</div>
 
 </body>
 </html>

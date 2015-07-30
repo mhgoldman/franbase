@@ -2,6 +2,10 @@ class Doc
   TAG_SEPARATOR = ','
 
   include Mongoid::Document
+  include Mongoid::Timestamps  
+
+  paginates_per 25
+
   field :name
   field :content  
   field :tags, type: Array
@@ -24,11 +28,17 @@ class Doc
     super(rhs.kind_of?(Array) ? rhs : rhs.split(TAG_SEPARATOR))
   end
 
+  def tag_list
+    tags ? tags.join(TAG_SEPARATOR) : ''
+  end
+
   def self.all_tags
-    Doc.distinct(:tags)
+    Doc.distinct(:tags).sort
   end
 
   def self.search(text)
-    self.text_search(text).execute['results'].map {|r| Doc.find(r['obj']['_id'])}
+    Doc.where(
+      :id.in => self.text_search(text).execute['results'].map {|r| r['obj']['_id']}
+    )
   end
 end
