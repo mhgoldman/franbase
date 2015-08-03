@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require bootstrap-tagsinput
-//= require twitter/typeahead
-//= require turbolinks
-//= require bootstrap-sprockets
 //= require ckeditor/init
+//= require select2
+//= require bootstrap-sprockets
+//= require turbolinks
 
 //= require_tree .
+

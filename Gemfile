@@ -65,6 +65,5 @@ gem 'truncate_html'
 
 gem 'kaminari'
 
-gem 'bootstrap-tagsinput-rails'
-gem 'twitter-typeahead-rails'
 gem 'jquery-turbolinks'
+gem 'select2-rails'
