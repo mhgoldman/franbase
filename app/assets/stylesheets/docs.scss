@@ -2,36 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Show Page
 #doc_header {
   margin-bottom: 1em;
 
   h2 {
     display: inline;
   }
+
+  .tags {
+    margin-top: 0.55em;
+  }
+
 }
 
-.tag_list {
+// Edit Page
+#doc_name {
+  width: 100%;  
+}
+
+.tag_selector {
   width: 100%;
 }
 
+.doc_operations {
+  margin-top: 1.5em;
+
+  a {
+    min-width: 6em;
+  }
+}
+
+
+// Index Page 
 .doc_item {
   a {
     color: black;
   }
-  h4 {
-    margin-top: 0;
-    font-size: 1.2em;
+
+  h3 {
+    display: inline;
+    font-size: 1.25em;
   }
 
-  p {
+  .excerpt {
+    margin: 0 0 0.25em 0;
+    clear: both;
+  }
+
+  .doc_details {
     margin: 0;
+    color: #999;
+    font-size: 0.8em;
   }
 
-  background-color: rgb(238,238,238);
-  border: 1px solid black;
-  margin: 0 0 1.5em 0;
-  padding: 0.125em 0.25em 0 0.25em;
-  border-radius: 0.5em;
+  margin: 1em 0;
+  padding: 0 0 1em 0.25em;
+  border-bottom: 1px solid #999;
 }
 
 .tags {
@@ -42,7 +69,6 @@
   font-size: 0.8em;
   color: white;
   font-weight: bold;
-  margin-top: 0.55em;
   a {
     color: white;
   }
@@ -54,4 +80,15 @@
 .pagination {
   vertical-align: middle;
   text-align: center;
+}
+
+#page_content_container {
+  width: 100%;
+}
+
+#page_content {
+  max-width: 35em;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
 }

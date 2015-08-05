@@ -1,8 +1,8 @@
 <br/>
 <%= form_for(@doc) do |f| %>
   <%= f.label :name %><br/><%= f.text_field :name %><br/><br/>
-  <%= f.label :tags %><br/><%= f.text_field :tags, value: f.object.tag_list, class: 'tag_list' %><br/><br/>
+  <%= f.label :tags %><br/><%= f.text_field :tags, value: f.object.tag_list, class: 'tag_selector' %><br/><br/>
   <%= f.label :content %><br/><%= f.cktext_area :content, class: :ckeditor %><br/><br/>
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-primary' %> <%= link_to 'Cancel', cancel_path, class: 'btn btn-danger' %>
 <% end %>
 <br/>

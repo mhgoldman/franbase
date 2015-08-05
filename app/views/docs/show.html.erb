@@ -6,4 +6,9 @@
   </span>
 </div>
 <div id='doc_content'><%= @doc.content.html_safe %></div>
-<%= link_to 'Edit', edit_doc_path(@doc) %><br/>
+
+<div class='doc_operations'>
+<%= link_to "<i class='glyphicon glyphicon-pencil'></i> Edit".html_safe, edit_doc_path(@doc), class: 'btn btn-primary' %>
+
+<%= link_to "<i class='glyphicon glyphicon-trash'></i> Delete".html_safe, @doc, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+</div>

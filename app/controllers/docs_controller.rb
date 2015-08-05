@@ -1,13 +1,21 @@
 class DocsController < ApplicationController
+  before_action :set_doc, only: [:show, :edit, :update, :destroy]
+
   def index
     doc_finder = DocFinder.find(params)
 
     @title = doc_finder.title
     @docs = doc_finder.results.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @docs
+      }
+    end
   end
 
   def show
-    @doc = Doc.find(params[:id])
   end
 
   def new
@@ -25,16 +33,20 @@ class DocsController < ApplicationController
   end
 
   def edit
-    @doc = Doc.find(params[:id])
   end
 
   def update
-    @doc = Doc.find(params[:id])
     if @doc.update(permitted_params)
       redirect_to @doc, notice: 'Doc updated!'
     else
       flash[:error] = @doc.errors.full_messages.to_sentence
       render 'edit'
+    end
+  end
+
+  def destroy
+    if @doc.destroy
+      redirect_to docs_path, notice: 'Doc deleted!'
     end
   end
 
@@ -46,5 +58,9 @@ class DocsController < ApplicationController
 
   def permitted_params
     params.require(:doc).permit(:name, :content, :tags)
+  end
+
+  def set_doc
+    @doc = Doc.find(params[:id])
   end
 end

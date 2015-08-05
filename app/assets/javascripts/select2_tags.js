@@ -1,5 +1,5 @@
 $(document).on('page:update', function(){
-    $('.tag_list').not('.has_select2').select2({
+    $('.tag_selector').not('.has_select2').select2({
         tags: true,
         tokenSeparators: [','],
         createSearchChoice: function (term) {
@@ -11,6 +11,7 @@ $(document).on('page:update', function(){
         ajax: {
             url: '/tags',
             dataType: 'json',
+            quietMillis: 500,
             data: function(term, page) {
                 return {
                     q: term
@@ -18,12 +19,15 @@ $(document).on('page:update', function(){
             },
             results: function(data, page) {
                 return {
-                    results: data
+                    results: $.map(data, function (val, i) {
+                        return { 
+                            id: val,
+                            text: val 
+                        }
+                    })
                 };
-            }
+            },
         },
-
-        // Take default tags from the input value
         initSelection: function (element, callback) {
             var data = [];
 
@@ -46,5 +50,5 @@ $(document).on('page:update', function(){
         }
     });
 
-    $('.tag_list').not('.has_select2').addClass('has_select2');
+    $('.tag_selector').not('.has_select2').addClass('has_select2');
 });

@@ -1,3 +1,2 @@
 <h2>Edit Doc</h2>
-<%= render 'form' %>
-<%= link_to 'Cancel', @doc %>
+<%= render 'form', cancel_path: doc_path(@doc) %>
