@@ -3,6 +3,6 @@
   <%= f.label :name %><br/><%= f.text_field :name %><br/><br/>
   <%= f.label :tags %><br/><%= f.text_field :tags, value: f.object.tag_list, class: 'tag_selector' %><br/><br/>
   <%= f.label :content %><br/><%= f.cktext_area :content, class: :ckeditor %><br/><br/>
-  <%= f.submit class: 'btn btn-primary' %> <%= link_to 'Cancel', cancel_path, class: 'btn btn-danger' %>
+  <%= f.submit class: 'btn btn-primary' %> <%= link_to 'Cancel', cancel_path, class: 'btn btn-default' %>
 <% end %>
 <br/>
