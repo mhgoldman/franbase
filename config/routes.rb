@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root 'docs#index'
 
   get 'tags' => 'tags#index'
-  
+
+  get 'search' => 'search#index'  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

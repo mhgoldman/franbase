@@ -16,7 +16,7 @@ class DocFinder
       @title = "Docs Tagged '#{criteria[:tag]}'"
     else
       @results = Doc.all
-      @title = "All Docs"
+      @title = "Docs"
     end
   end
 
