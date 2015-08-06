@@ -1,13 +1,14 @@
 <div class='doc_item'>
   <div class='tags_container'>
-    <span class='tags'>
-      <i class="glyphicon glyphicon-tag"></i>
-      <%= generate_tag_list(doc.tags).html_safe %>
-    </span>
   </div>  
   <div class='name'>
     <h3><%= link_to doc.name, doc_path(doc) %></h3>
   </div>
   <p class='excerpt'><%= excerpt_from(doc.content, doc_path(doc)) %></p>
-  <p class='doc_details'>Last updated <%= time_ago_in_words(doc.updated_at) %> ago &bull; Created <%= time_ago_in_words(doc.created_at) %> ago</p>
+    <span class='tags'>
+      <%= generate_tag_list(doc.tags).html_safe %>
+    </span>
+    <span class='doc_details'> 
+      Last updated <%= time_ago_in_words(doc.updated_at) %> ago
+    </span>
 </div>
