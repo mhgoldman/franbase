@@ -97,11 +97,6 @@
   margin-right: auto;
 }
 
-.select2-section-heading {
-  text-transform: uppercase;
-  font-size: 0.8em;
-}
-
 .select2-collection-name {
   text-transform: uppercase;
   font-size: 0.8em;
@@ -111,6 +106,7 @@
 .select2-collection-link {
   float: right;
   font-size: 0.8em;
+  color: #999;
 }
 
 .select2-collection-header {
@@ -124,10 +120,10 @@
   overflow: hidden;
 }
 
-.navbar-form .form-group .searchbox {
-  width: 15em;
-}
-
 .select2-arrow {
   visibility: hidden;
+}
+
+.navbar-form .form-group .searchbox {
+  width: 15em;
 }

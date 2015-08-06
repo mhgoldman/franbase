@@ -9,32 +9,28 @@ function format(obj) {
 
     container = document.createElement('div');
 
-    // if (obj.kind == 'header') {        
-    //     container.className = 'select2-collection-header';        
-    //     collname = document.createElement('span');
-    //     collname.innerHTML = text;        
-    //     collname.className = 'select2-collection-name';
-    //     collname.title = (collname.textContent || collname.innerText).trim();
-    //     container.appendChild(collname);
-    //     link = document.createElement('span');
-    //     link.className = 'select2-collection-link';
-    //     link.innerHTML = "<a href='" + obj.url + "'>view all</a>"
-    //     link.setAttribute('data-url', obj.url)        
-    //     container.appendChild(link);
-    // } else {
-    //     container.className = 'select2-item';
-    //     container.innerHTML = text;        
-    //     container.title = (container.textContent || container.innerText).trim();
-    // }
-
     if (obj.kind == 'header') {        
-        container.className = 'select2-section-heading';
+        container.className = 'select2-collection-header';        
+        collname = document.createElement('span');
+        collname.innerHTML = text;        
+        collname.className = 'select2-collection-name';
+        collname.title = (collname.textContent || collname.innerText).trim();
+        container.appendChild(collname);
+        link = document.createElement('span');
+        link.className = 'select2-collection-link';
+
+        if (obj.num_more > 0) {
+            link.innerHTML = "+" + obj.num_more + " more";
+        }
+
+        link.setAttribute('data-url', obj.url)        
+        container.appendChild(link);
     } else {
         container.className = 'select2-item';
-    }
-
         container.innerHTML = text;        
         container.title = (container.textContent || container.innerText).trim();
+    }
+
     return container;
 }
 
@@ -77,7 +73,8 @@ $(document).on('page:update', function(){
                         {
                             id: 'tags-header',
                             kind: 'header',
-                            text: "Tags (" + Math.min(data.tags.length, MAX_RESULTS) + " / " + data.tags.length + ")",
+                            text: "Tags",
+                            num_more: Math.max(num_tags - MAX_RESULTS, 0),
                             url: encodeURI('/tags?q=' + q),
                             children: tags
                         }
@@ -101,7 +98,8 @@ $(document).on('page:update', function(){
                         {
                             id: 'docs-header',
                             kind: 'header',
-                            text: "Docs (" + Math.min(data.docs.length, MAX_RESULTS) + " / " + data.docs.length + ")",
+                            text: "Docs",
+                            num_more: Math.max(num_docs - MAX_RESULTS, 0),
                             url: encodeURI('/docs?q=' + q),
                             children: docs
                         }
@@ -118,12 +116,6 @@ $(document).on('page:update', function(){
     $('.searchbox').not('has_select2').on('select2-selecting', function(e) {
         if (e && e.choice && e.choice.url) {
             location.href = e.choice.url;
-        }
-    });
-
-    $('.select2-collection-link a').on('click', function(e) { 
-        if (e && e.target && (url = e.target.getAttribute('href'))) {
-            location.href = url;
         }
     });
 
