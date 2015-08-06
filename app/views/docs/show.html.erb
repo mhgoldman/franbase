@@ -1,9 +1,6 @@
 <div id='doc_header'>
   <h2><%= @doc.name %></h2>
-  <span class='tags'>
-    <i class="glyphicon glyphicon-tag"></i>
-    <%= generate_tag_list(@doc.tags).html_safe %>
-  </span>
+  <%= render 'doc_info', doc: @doc %>
 </div>
 <div id='doc_content'><%= @doc.content.html_safe %></div>
 

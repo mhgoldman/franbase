@@ -10,7 +10,7 @@ class DocFinder
   def perform
     if criteria[:q].present?
       @results = Doc.search(criteria[:q])
-      @title = "Search Results for '#{criteria[:q]}'"
+      @title = "Doc Search Results for '#{criteria[:q]}'"
     elsif criteria[:tag].present?
       @results = Doc.where(tags: criteria[:tag])
       @title = "Docs Tagged '#{criteria[:tag]}'"

@@ -5,10 +5,5 @@
     <h3><%= link_to doc.name, doc_path(doc) %></h3>
   </div>
   <p class='excerpt'><%= excerpt_from(doc.content, doc_path(doc)) %></p>
-    <span class='tags'>
-      <%= generate_tag_list(doc.tags).html_safe %>
-    </span>
-    <span class='doc_details'> 
-      Last updated <%= time_ago_in_words(doc.updated_at) %> ago
-    </span>
+  <%= render 'doc_info', doc: doc %>
 </div>

@@ -1,0 +1,11 @@
+  <div class='doc_info'>
+    <span class='tags'>
+      <%= tag_list_for(doc.tags).html_safe %>
+    </span>
+    <span class='doc_details'> 
+      <span class='author' title='author'><i class='glyphicon glyphicon-user'></i> Martin Goldman</span>
+      &nbsp;
+      <span class='last_updated' title='last updated'><i class='glyphicon glyphicon-calendar'></i> <%= time_ago_in_words(doc.updated_at) %> ago</span>
+    </span>
+    <div style='clear:both'></div>
+  </div>
