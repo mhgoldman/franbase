@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Show Page
-h2 {
+#doc_header {
   margin-bottom: 1em;
 }
 
@@ -40,11 +40,6 @@ h2 {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.excerpt {
-  margin: 0 0 0.5em 0;
-  clear: both;
-}
-
 .pagination {
   vertical-align: middle;
   text-align: center;
@@ -63,15 +58,10 @@ h2 {
   float: right;
 }
 
-#page_content_container {
-  width: 100%;
-}
-
 #page_content {
   max-width: 40em;
   line-height: 1.5;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto;
 }
 
 .select2-collection-name {
