@@ -8,7 +8,7 @@
 }
 
 /* line 13, /Users/mgoldman/src/franbase/app/assets/stylesheets/docs.scss */
-.doc_item {
+.doc_list_item {
   background-color: #eeeeee;
   border: 1px solid black;
   margin: 0 0 1.5em 0;
@@ -16,16 +16,16 @@
   border-radius: 0.5em;
 }
 /* line 14, /Users/mgoldman/src/franbase/app/assets/stylesheets/docs.scss */
-.doc_item a {
+.doc_list_item a {
   color: black;
 }
 /* line 17, /Users/mgoldman/src/franbase/app/assets/stylesheets/docs.scss */
-.doc_item h4 {
+.doc_list_item h4 {
   margin-top: 0;
   font-size: 1.2em;
 }
 /* line 22, /Users/mgoldman/src/franbase/app/assets/stylesheets/docs.scss */
-.doc_item p {
+.doc_list_item p {
   margin: 0;
 }
 

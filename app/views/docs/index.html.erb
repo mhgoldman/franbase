@@ -2,7 +2,7 @@
 
 <div id='doc_list'>
   <% if @docs.count > 0 %>
-    <%= render @docs %>
+    <%= render collection: @docs, partial: 'doc_list_item', as: :doc %>
     <%= paginate @docs %>
   <% else %>
     There are no docs.

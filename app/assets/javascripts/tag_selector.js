@@ -1,5 +1,5 @@
-$(document).on('page:update', function(){
-    $('.tag_selector').not('.has_select2').select2({
+$(document).on('page:load ready', function(){
+    $('.tag_selector').select2({
         tags: true,
         tokenSeparators: [','],
         createSearchChoice: function (term) {
@@ -49,6 +49,4 @@ $(document).on('page:update', function(){
             callback(data);
         }
     });
-
-    $('.tag_selector').not('.has_select2').addClass('has_select2');
 });

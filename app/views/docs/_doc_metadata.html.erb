@@ -1,0 +1,11 @@
+  <div class='doc_metadata'>
+    <span class='tags'>
+      <%= tag_list_for(doc.tags).html_safe %>
+    </span>
+    <span class='doc_properties'> 
+      <span title='author'><%= glyphicon_for(:user,'Martin Goldman') %></span>
+      &nbsp;
+      <span title='last updated'><%= glyphicon_for(:calendar, time_ago_in_words(doc.updated_at)) %> ago</span>
+    </span>
+    <div style='clear:both'></div>
+  </div>

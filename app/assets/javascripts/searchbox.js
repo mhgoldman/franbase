@@ -2,31 +2,30 @@ function format(obj) {
     text = obj.text;
 
     if (obj.kind == 'tag') {
-        text = "<i class='glyphicon glyphicon-tag'></i> " + obj.text;
+        text = "<i class='glyphicon glyphicon-tag'></i>&nbsp;" + obj.text;
     } else if (obj.kind == 'doc') {
-        text = "<i class='glyphicon glyphicon-file'></i> " + obj.text;
+        text = "<i class='glyphicon glyphicon-file'></i>&nbsp;" + obj.text;
     }
 
     container = document.createElement('div');
 
     if (obj.kind == 'header') {        
-        container.className = 'select2-collection-header';        
+        container.className = 'searchbox-collection-header';        
         collname = document.createElement('span');
         collname.innerHTML = text;        
-        collname.className = 'select2-collection-name';
+        collname.className = 'searchbox-collection-name';
         collname.title = (collname.textContent || collname.innerText).trim();
         container.appendChild(collname);
         link = document.createElement('span');
-        link.className = 'select2-collection-link';
+        link.className = 'searchbox-collection-more';
 
         if (obj.num_more > 0) {
             link.innerHTML = "+" + obj.num_more + " more";
         }
 
-        link.setAttribute('data-url', obj.url)        
         container.appendChild(link);
     } else {
-        container.className = 'select2-item';
+        container.className = 'searchbox-item';
         container.innerHTML = text;        
         container.title = (container.textContent || container.innerText).trim();
     }
@@ -34,10 +33,10 @@ function format(obj) {
     return container;
 }
 
-$(document).on('page:update', function(){
+$(document).on('page:load ready', function(){
     MAX_RESULTS = 5;
 
-    $('.searchbox').not('.has_select2').select2({
+    $('.searchbox').select2({
         formatResult: format,
         formatSelection: format,
         formatInputTooShort: false,
@@ -113,11 +112,9 @@ $(document).on('page:update', function(){
         },
     });
 
-    $('.searchbox').not('has_select2').on('select2-selecting', function(e) {
+    $('.searchbox').on('select2-selecting', function(e) {
         if (e && e.choice && e.choice.url) {
             location.href = e.choice.url;
         }
     });
-
-    $('.searchbox').not('.has_select2').addClass('has_select2');
 });

@@ -18,7 +18,7 @@
           <li class="<%= 'active' if params[:controller] == 'tags' %>"><%= link_to 'Tags', tags_path %></li>
           <li>
             <p class='navbar-btn'>
-              <%= link_to "<i class='glyphicon glyphicon-plus'></i> New Doc".html_safe, new_doc_path, class: 'btn btn-info' %>
+              <%= link_to glyphicon_for(:plus,'New Doc'), new_doc_path, class: 'btn btn-info' %>
             </p>
           </li>      
           <li>

@@ -1,0 +1,5 @@
+<div class='doc_list_item'>
+  <h3><%= link_to doc.name, doc_path(doc) %></h3>
+  <p><%= excerpt_from(doc.content) %></p>
+  <%= render 'doc_metadata', doc: doc %>
+</div>

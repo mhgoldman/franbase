@@ -1,0 +1,10 @@
+#page_content {
+  max-width: 40em;
+  line-height: 1.5;
+  margin: 1em auto;
+
+  @media screen and (max-width: 40em) {
+    padding: 0 0.5em;
+  }
+}
+

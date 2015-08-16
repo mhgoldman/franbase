@@ -1,0 +1,14 @@
+.tag {
+  padding: 0.25em 0.5em;
+  background-color: #999;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+  font-weight: bold;
+  white-space: nowrap;
+  a {
+    color: white;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}

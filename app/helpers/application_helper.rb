@@ -15,6 +15,10 @@ module ApplicationHelper
   end    
 
   def tag_for(text)
-    "<span class='tag'><a href='/docs?tag=#{text}'><i class='glyphicon glyphicon-tag'></i> #{text}</a></span>".html_safe
+    "<span class='tag'><a href='/docs?tag=#{text}'>#{glyphicon_for(:tag,text)}</a></span>".html_safe
   end  
+
+  def glyphicon_for(name,label)
+    "<i class='glyphicon glyphicon-#{name}'></i>&nbsp;#{label}".html_safe
+  end
 end
