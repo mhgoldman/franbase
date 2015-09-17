@@ -1,7 +1,9 @@
 class TagsController < ApplicationController
   def index
-    @tags = Doc.all_tags.select {|t| params[:q].present? ? t.include?(params[:q]) : true}
-    @title = params[:q].present? ? "Tag Search Results for '#{params[:q]}'" : "Tags"
+    tag_finder = TagFinder.find(params)
+
+    @title = tag_finder.title
+    @tags = tag_finder.results
 
     respond_to do |format|
       format.html
