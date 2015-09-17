@@ -66,4 +66,4 @@ gem 'truncate_html'
 gem 'kaminari'
 
 gem 'jquery-turbolinks'
-gem 'select2-rails'
+gem 'select2-rails', '~> 3.5.9'
