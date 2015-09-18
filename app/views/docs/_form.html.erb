@@ -2,7 +2,7 @@
 <%= form_for(@doc, data: {no_turbolink: true }) do |f| %>
   <%= f.label :name %><br/><%= f.text_field :name %><br/><br/>
   <%= f.label :tags %><br/><%= f.text_field :tags, value: f.object.tag_list, class: 'tag_selector' %><br/><br/>
-  <%= f.label :content %><br/><%= f.cktext_area :content, class: :ckeditor, ckeditor: { autogrow_onStartup: true } %><br/><br/>
+  <%= f.label :content %><br/><%= f.cktext_area :content, class: :ckeditor, ckeditor: {height: '20em'} %><br/><br/>
   <%= f.submit class: 'btn btn-primary' %> <%= link_to 'Cancel', cancel_path, class: 'btn btn-default' %>
 <% end %>
 <br/>
