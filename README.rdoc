@@ -1,3 +1,3 @@
 == Franbase
 
-This the home of my project to build a knowledge management system built on Ruby, Rails and Mongoid/MongoDB. It is currently in the <b>very early stages of development</b> and probably not worth looking too closely at yet.
+This the home of my project to build a knowledge management system using Ruby, Rails and Mongoid/MongoDB. It is currently in the <b>very early stages of development</b> and probably not worth looking too closely at yet.
