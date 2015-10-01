@@ -3,6 +3,7 @@ class Doc
 
   include Mongoid::Document
   include Mongoid::Timestamps  
+  include Trackable
 
   paginates_per 25
 

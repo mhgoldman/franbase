@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :docs
+  resources :docs do
+    resources :versions, only: :show
+  end
 
   devise_for :users
 
