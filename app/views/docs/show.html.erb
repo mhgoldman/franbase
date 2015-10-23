@@ -3,7 +3,7 @@
     <h2><%= @doc.name %></h2>
     <%= render 'doc_metadata', doc: @doc %>
   </div>
-  <div id='doc_content'><%= @doc.content.html_safe %></div>
+  <div id='doc_content'><%= (@doc.content || '').html_safe %></div>
 
   <div id='doc_operations'>
   <%= link_to glyphicon_for(:pencil, 'Edit'), edit_doc_path(@doc), class: 'btn btn-primary' %>

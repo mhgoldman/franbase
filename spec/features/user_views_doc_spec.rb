@@ -14,7 +14,6 @@ RSpec.feature "UserViewsDoc", type: :feature do
     visit doc_url(doc)
 
     expect(page).to have_content(doc.name)
-#    expect(page).to have_content(doc.content)
     expect(page).to have_content(doc.tags.join(' '))
   end
 
