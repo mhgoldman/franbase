@@ -56,7 +56,7 @@ gem "devise"
 
 group :test do
   gem "capybara"
-  gem "database_cleaner"
+  gem 'database_cleaner', git: 'https://github.com/DatabaseCleaner/database_cleaner.git'
   gem "mongoid-rspec"
   gem "email_spec"
 end

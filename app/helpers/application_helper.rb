@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def tag_list_for(tags)
-    tags.map {|tag| tag_for(tag) }.join(" ") 
+    (tags || []).map {|tag| tag_for(tag) }.join(" ") 
   end    
 
   def tag_for(text)

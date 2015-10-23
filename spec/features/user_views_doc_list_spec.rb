@@ -4,6 +4,9 @@ RSpec.feature "UserViewsDocList", type: :feature do
 
   scenario 'User views doc list successfully' do
     docs = create_list(:doc, 10)
+
+    docs.each {|d| d.set(updater_id: d.creator_id) }
+
     login
     visit docs_path
 

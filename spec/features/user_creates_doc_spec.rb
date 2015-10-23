@@ -6,7 +6,7 @@ RSpec.feature "UserCreatesDoc", type: :feature do
     login
     old_doc_count = Doc.count
 
-    click_link 'New doc'
+    click_link 'New Doc'
     fill_in 'Name', with: 'a brand new doc'
     fill_in 'Tags', with: 'one,two,three'
     fill_in 'Content', with: 'Lorem ipsum et cetera'
@@ -20,7 +20,7 @@ RSpec.feature "UserCreatesDoc", type: :feature do
     login
     old_doc_count = Doc.count
 
-    click_link 'New doc'
+    click_link 'New Doc'
     fill_in 'Tags', with: 'one,two,three'
     fill_in 'Content', with: 'Lorem ipsum et cetera'
     click_button 'Create Doc'
