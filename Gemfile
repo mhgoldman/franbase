@@ -68,4 +68,4 @@ gem 'kaminari'
 gem 'jquery-turbolinks'
 gem 'select2-rails', '~> 3.5.9'
 
-gem 'mongoid-audit'
+gem 'mongoid-history'

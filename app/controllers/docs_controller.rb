@@ -24,6 +24,7 @@ class DocsController < ApplicationController
 
   def create
     @doc = Doc.new(permitted_params)
+    
     if @doc.save
       redirect_to docs_path, notice: 'Doc created!'
     else
@@ -35,7 +36,7 @@ class DocsController < ApplicationController
   def edit
   end
 
-  def update
+  def update    
     if @doc.update(permitted_params)
       redirect_to @doc, notice: 'Doc updated!'
     else

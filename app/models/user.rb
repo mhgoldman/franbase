@@ -5,7 +5,15 @@ class User
   def name
     "#{first_name} #{last_name}"
   end
-  
+
+  def self.current
+    Thread.current[:user]
+  end
+
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
+
   field :first_name
   field :last_name
 
