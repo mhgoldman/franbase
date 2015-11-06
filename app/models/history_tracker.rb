@@ -3,6 +3,6 @@ class HistoryTracker
   before_create :set_creator
 
   def set_creator
-    self.modifier = User.last
+    self.modifier = User.current if User.current
   end
 end
