@@ -12,7 +12,7 @@
   <tbody>
     <% doc.history_tracks.sort_by {|ht| -ht.version}.each do |history_track| %>
       <tr>
-        <td><%= link_to history_track.version, doc_history_track_path(doc, history_track.version) %></td>
+        <td><%= link_to history_track.version, doc_history_track_path(doc, history_track) %></td>
         <td><%= history_track.created_at %></td>
         <td><%= history_track.modifier.name %></td>
         <td><%= history_track.action %></td>

@@ -25,6 +25,10 @@ class HistoryTracker
     unmodified_values
   end  
   
+  def to_param
+    self.version.to_s
+  end
+
   def method_missing(method_sym, *arguments, &block)
     self.modified[method_sym.to_s] || self.unmodified[method_sym.to_s]
   end
