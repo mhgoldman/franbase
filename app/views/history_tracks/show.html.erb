@@ -1,0 +1,8 @@
+<div id='doc'>
+  <div id='doc_header'>
+    <h2><%= @history_track.name %> (version <%= @history_track.version %>)</h2>
+    <%= render 'docs/doc_metadata', doc: @history_track %>
+  </div>
+
+  <%= render 'docs/doc_content', doc: @history_track %>
+</div>

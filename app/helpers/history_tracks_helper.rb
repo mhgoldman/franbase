@@ -1,0 +1,2 @@
+module HistoryTracksHelper
+end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :docs do
-    resources :versions, only: :show
+    resources :history_tracks, only: :show
   end
 
   devise_for :users

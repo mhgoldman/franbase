@@ -1,0 +1,5 @@
+  <div id='doc_operations'>
+  <%= link_to glyphicon_for(:pencil, 'Edit'), edit_doc_path(doc), class: 'btn btn-primary' %>
+  &nbsp;
+  <%= link_to glyphicon_for(:trash, 'Delete'), doc, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </div>

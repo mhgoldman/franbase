@@ -1,41 +1,10 @@
 <div id='doc'>
   <div id='doc_header'>
     <h2><%= @doc.name %></h2>
-    <%= render 'doc_metadata', doc: @doc %>
-  </div>
-  <div id='doc_content'><%= (@doc.content || '').html_safe %></div>
-
-  <div id='doc_operations'>
-  <%= link_to glyphicon_for(:pencil, 'Edit'), edit_doc_path(@doc), class: 'btn btn-primary' %>
-  &nbsp;
-  <%= link_to glyphicon_for(:trash, 'Delete'), @doc, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <%= render 'docs/doc_metadata', doc: @doc %>
   </div>
 
-  <div id='doc_history'>
-    <h4>History</h4>
-<!--     <a data-toggle='collapse' data-target='#doc_history_table'>view</a>
-    <div class='collapse' id='doc_history_table'>
- -->
-    <table class="table table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Version</th>
-        <th>Date/Time</th>
-        <th>User</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @doc.history_tracks.sort_by {|ht| -ht.version}.each do |history_track| %>
-        <tr>
-          <td><%= history_track.version %></td>
-          <td><%= history_track.created_at %></td>
-          <td><%= history_track.modifier.name %></td>
-          <td><%= history_track.action %></td>
-        </tr>
-      <% end %>
-    </tbody>
-    </table>
-<!--     </div> -->
-  </div>
+  <%= render 'doc_content', doc: @doc %>
+  <%= render 'doc_operations', doc: @doc %>
+  <%= render 'doc_history', doc: @doc %>
 </div>
